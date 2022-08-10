@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./../Styles/reset.css">
+    <link rel="stylesheet" href="./../Styles/login.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Kenzie<span>Food</span></h1>
+    </div>
+  </header>
+    <section class="login">
+        <div class="login__container container">
+          <h1 class="login__title formTitle">Login</h1>
+          <form action="#" class="login__form formEmpty">
+            <input
+              class="login__input empty"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              class="login__input empty"
+              type="password"
+              name="password"
+              placeholder="senha"
+              required
+            />
+            <button class="login__input formBtn" type="submit">Login</button>
+          </form>
+          <div class="login__createAccount">
+            <p class="login__text link__Margin moveOn">
+              <a class="link" href="./signup.html">Crie uma Conta</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <script type="module" src="./../Models/Login/UserLogin.js"></script>
+</body>
+</html>

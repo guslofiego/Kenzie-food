@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../Styles/reset.css">
+    <link rel="stylesheet" href="./../Styles/admin.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Kenzie<span>Food</span></h1>
+        </div>
+        <div>
+            <div class="containerSearchIcons">
+                <div class="inputSearchContainer">
+                    <img class="iconSearch"src="https://img.icons8.com/ios-glyphs/452/search--v1.png">
+                    <input type="text" placeholder="Pesquisar por produto" name="searchProductAdmin" class="input inputSearch">
+                </div>
+                <img id="userIcon"class="userIcon" src="https://www.unitdanca.com.br/wp-content/uploads/2021/06/user-icon.jpg" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="filterContainer">
+            <nav>
+                <ul class="filterList">
+                    <li class="filterSelect filter all"><span class="filterText all ">Todos</span></li>
+                    <li class="filter backery"><span><img class="filterImg" src="https://api.iconify.design/emojione-v1:bread.svg?color=%23888888"></span><span class="filterText">Panificadora</span></li>
+                    <li class="filter fruit"><span><img class="filterImg" src="https://api.iconify.design/openmoji:red-apple.svg?color=%23888888"></span><span class="filterText">Frutas</span></li>
+                    <li class="filter drink"><span><img class="filterImg" src="https://api.iconify.design/openmoji:wine-glass.svg?color=%23888888"></span><span class="filterText ">Bebidas</span></li>
+                </ul>
+            </nav>
+            <button class="addNewProduct">Adicionar novo produto</button>
+        </div>
+        <div>
+            <ul class="listTag">
+                <li class="tagProduct">Produto</li>
+                <li class="tagCategory">Categorias</li>
+                <li class="tagDescription">Descrição</li>
+                <li class="tagAction">Ações</li>
+            </ul>
+            <ul name="myProductList" class="myProductList" id="myProductList">
+            </ul>
+        </div>
+        <div name="backgroudOpacity" class="hidden backgroudOpacity">
+        </div>
+        <div id="menuNewMyProduct" name="menuNewMyProduct" class="hidden menuProductContainer">
+            <div name="menuProduct" class="menuProduct">
+                <div class="headerMenuProduct">
+                    <h2 class="menuProductTittle">Cadastro de produto</h2>
+                    <button id="closeCreateMenu" class="closeMenu">X</button>
+                </div>
+                <form class="formProduct">
+                    <label class="productText fontFormproduct">Nome do Produto</label>
+                    <input class="inputNewProduct productInput fontFormproduct onFocusInput" type="text" name="myProductName" placeholder="Digitar o nome">
+                    <label class="productDescription fontFormproduct">Descrição</label>
+                    <textarea class="inputNewProduct productDescriptionInput fontFormproduct onFocusInput" placeholder="Digitar a descrição"></textarea>
+                    <label class="productCategories fontFormproduct">Categorias</label>
+                    <div class="productCategoriesContainer">
+                        <p class="productCategoryOption fontFormproduct" id="selectbakery">Panificadora</p>
+                        <p class="productCategoryOption fontFormproduct" id="selectFruit">Frutas</p>
+                        <p class="productCategoryOption fontFormproduct" id="selectDrink">Bebidas</p>
+                    </div>
+                    <label class="productText fontFormproduct">Valor do Produto</label>
+                    <input class="inputNewProduct productInput fontFormproduct onFocusInput"type="text" placeholder="Digitar o valor aqui">
+                    <label class="productText fontFormproduct">Link da imagem</label>
+                    <input class="inputNewProduct productInput fontFormproduct onFocusInput" type="text" placeholder="Inserir link ">
+                    <button id="btnNewProduct" class="btnNewProduct">Cadastrar Produto</button>
+                </form>
+            </div>
+        </div>
+        <div  id="menuEditMyProduct" name="menuEditMyProduct" class="hidden menuProductContainer">
+            <div class="menuProduct">
+                <div class="headerMenuProduct">
+                    <h2 class="menuProductTittle">Edição de produto</h2>
+                    <button id="closeEditMenu" class="closeMenu">X</button>
+                </div>
+                <form id="formEditProduct" class="formProduct">
+                    <label class="productText fontFormproduct">Nome do Produto</label>
+                    <input name="nome" class="inputEditProduct productInput fontFormproduct onFocusInput" type="text" name="myProductName" placeholder="Digitar o nome">
+                    <label class="productDescription fontFormproduct">Descrição</label>
+                    <textarea name="descricao" class="inputEditProduct productDescriptionInput fontFormproduct onFocusInput" placeholder="Digitar a descrição"></textarea>
+                    <label class="productCategories fontFormproduct">Categorias</label>
+                    <div class="productCategoriesContainer">
+                        <p class="productCategoryOption fontFormproduct editCategory" id="selectbakery">Panificadora</p>
+                        <p class="productCategoryOption fontFormproduct editCategory" id="selectFruit">Frutas</p>
+                        <p class="productCategoryOption fontFormproduct editCategory" id="selectDrink">Bebidas</p>
+                    </div>
+                    <label class="productText fontFormproduct">Valor do Produto</label>
+                    <input name="preco" class="inputEditProduct productInput fontFormproduct onFocusInput"type="text" placeholder="Digitar o valor aqui">
+                    <label class="productText fontFormproduct">Link da imagem</label>
+                    <input name="imagem" class="inputEditProduct productInput fontFormproduct onFocusInput" type="text" placeholder="Inserir link ">
+                    <div class="btnEditContainer">
+                        <p class="btnEditRemove">Excluir</p>
+                        <p class="btnEditSave">Salvar alterações</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="menuDeleteMyProduct" name="menuDeleteMyProduct" class="hidden menuDeleteProductContainer">
+            <div name="deleteMyProduct" class="deleteMyProduct">
+                <div class="headerDeleteMyProduct">
+                    <p class="deleteMyProductTittle">Exclusão de produto</p>
+                    <button id="closeDeleteMenu"class="closeMenu">X</button>
+                </div>
+                <div>
+                    <p class="removeText">Tem certeza que deseja exluir este produto?</p>
+                    <div class="btnRemoveContainer">
+                        <button id="yesRemove"class="btnRemove">Sim</button>
+                        <button id="noRemove" class="btnRemove">Não</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="statusSucess" name="statusSucess" class="hidden StatusContainer">
+            <div name="statusSucess" class="status">
+                <div class="statusHeader">
+                    <p class="statusTittle">Status</p>
+                    <button id="statusSucessCloseMenu"class="closeMenu">X</button>
+                </div>
+                <div class="warningTextContainer">
+                    <p class="warningText">Produto adicionado com sucesso</p>
+                </div>
+                <div class="green"></div>
+            </div>
+        </div>
+        <div id="statusError" name="statusError" class="hidden StatusContainer">
+            <div class="status">
+                <div class="statusHeader">
+                    <p class="statusTittle">Status</p>
+                    <button id="statusErrorCloseMenu" class="closeMenu">X</button>
+                </div>
+                <div class="warningTextContainer">
+                    <p class="warningText">Ocorreu algum erro, o produto não foi adicionado</p>
+                </div>
+                <div class="red"></div>
+            </div>
+        </div>
+        <div id="toggleLogout" name="toggleLogout" class="hidden toggleLogoutContainer">
+            <div class="triangle">
+            </div>
+            <div class="toggleLogout">
+                <div class="toggleLogoutHeader">
+                    <p class="logoutUserName">Nome Usuario</p>
+                </div>
+                <div class="btnLogoutContainer">
+                    <button class="btnLogout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../Scripts/admin.js"></script>
+</body>
+</html>

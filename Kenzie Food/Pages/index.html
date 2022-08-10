@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/reset.css">
+    <link rel="stylesheet" href="../Styles/index.css">
+    <title>Produtos</title>
+</head>
+<body>
+    <header>
+       
+        <div class="firstline_conteiner">
+            <div class="text_conteiner">
+            
+                   <a class="home_page" href="./index.html">
+                       <h3>Kenzie</h3>
+                   </a>
+                   <a class="home_page" href="./index.html">
+                       <h5>Food</h5>
+                    </a> 
+            
+            </div>
+
+            <div class="login_conteiner">
+                <img class="" id="home_profile_img" src="https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png" alt="">
+                <div class="login_button_conteiner">
+                </div>
+            </div>
+        </div>
+
+        <div class="search_conteiner">
+            <img src="https://api.iconify.design/ic:round-search.svg" alt="">
+            <input id="search_input" type="text" placeholder="Pesquisar por produto">
+        </div>
+
+    </header>
+
+    <main>
+        
+        <div class="main_content_conteiner">
+            <ul class="main_content_filter">
+                <li class="liSelect main_content_filter_category">
+                    <p id="all">Todos</p>
+                </li>
+                <li class="main_content_filter_category">
+                    <img src="https://api.iconify.design/emojione-v1:bread.svg?color=%23888888" alt="">
+                    <p id="backery">Panificadora</p>
+                </li>
+                <li class="main_content_filter_category">
+                    <img src="https://api.iconify.design/openmoji:red-apple.svg?color=%23888888" alt="">
+                    <p id="fruit">Frutas</p>
+                </li>
+                <li class="main_content_filter_category">
+                    <img src="https://api.iconify.design/openmoji:wine-glass.svg?color=%23888888" alt="">
+                    <p id="drink">Bebidas</p>
+                </li>
+            </ul>
+    
+            <ul class="main_content_products">
+
+                
+            </ul>
+        </div>
+
+        <button id="cart_button">
+            <img src="../Images/Home/white_cart.png" alt="">
+            <p>Carrinho</p>
+        </button>
+        
+        <div class = "hidden" id="mobile_cart_background"></div>
+        <aside id="main_cart" class="hidden main_cart">
+            <div class="main_cart_text_conteiner">
+                <img id="desktop_cart_image" src="https://img.icons8.com/material-sharp/96/ffffff/shopping-cart-loaded.png" alt="">
+                <h3>Carrinho</h3>
+                <button id="mobile_close_cart_button">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/delete-sign.png" alt="">
+                </button>
+            </div>
+            
+            <div id="cart_empty_conteiner" class="">
+                <img src="../Images/Home/shopping-bag.png" alt="">
+                <p>Carrinho Vazio</p>
+            </div>
+            
+            <ul class="hidden main_cart_product_list">
+                
+            </ul>
+
+            <div id="main_cart_quantity_conteiner" class="hidden main_cart_quantity_conteiner">
+                <p id="cart_quantity_text">Quantidade</p>
+                <p id="cart_quantity_value">0</p>
+            </div>
+
+            <div id="main_cart_totalValue_conteiner" class="hidden main_cart_totalValue_conteiner">
+                <p id="cart_totalvalue_text">Total</p>
+                <p id="cart_totalvalue_value">R$ 0.00</p>
+            </div>
+        </aside>
+
+    </main>
+    <script type="module" src="./../Models/Home/Cart.js"></script>
+    <script type="module" src="../Scripts/home.js"></script>
+</body>
+</html>
